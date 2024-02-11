@@ -13,7 +13,7 @@ export default function Header(): JSX.Element {
     <>
       <div className={styles.parent}>
         <div className={styles.logo}>Yumi Narita</div>
-        <div className={styles.subLogo}>ART・JAZZ・TEACHER</div>
+        <div className={styles.subLogo}>ART・JAZZ・LESSON</div>
         <div className={styles.menuButton}>
           <button type="submit" onClick={isOpen ? onClose : onOpen}>
             <div
