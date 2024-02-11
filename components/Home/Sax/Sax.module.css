@@ -1,0 +1,48 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  aspect-ratio: 1;
+  width: 90%;
+  margin-bottom: 8px;
+}
+
+.column {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image {
+  height: 49%;
+}
+
+.image_tall {
+  height: 100%;
+}
+
+.link {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 90%;
+}
+
+.words {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link:active {
+  color: var(--theme-color);
+  font-weight: 400;
+  text-decoration: underline;
+}
