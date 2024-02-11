@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding-left: 16px;
+  font-size: 24px;
+  color: black;
+}
+
+.button:active {
+  background-color: #ddd;
+}
+
+.isClicked {
+  color: var(--theme-color);
+  font-weight: 400;
+}
