@@ -14,8 +14,12 @@ export default function Header(): JSX.Element {
       <div className={styles.parent}>
         <div className={styles.logo}>Yumi Narita</div>
         <div className={styles.subLogo}>ART・JAZZ・LESSON</div>
-        <div className={styles.menuButton}>
-          <button type="submit" onClick={isOpen ? onClose : onOpen}>
+        <div>
+          <button
+            className={styles.menuButton}
+            type="submit"
+            onClick={isOpen ? onClose : onOpen}
+          >
             <div
               className={styles.animation}
               style={{ opacity: isOpen ? "0" : "100" }}
@@ -27,14 +31,13 @@ export default function Header(): JSX.Element {
               />
             </div>
             <div
-              className={styles.animation}
+              className={clsx(styles.animation, styles.rightArrow)}
               style={{ opacity: isOpen ? "100" : "0" }}
             >
               <ArrowRightIcon
                 fontSize={"x-large"}
                 color={"#555"}
                 margin={"8px"}
-                marginTop={"-60px"}
               />
             </div>
           </button>

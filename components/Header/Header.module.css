@@ -85,6 +85,10 @@
   display: none;
 }
 
+.rightArrow {
+  margin-top: -40px;
+}
+
 .animation {
   transition: 0.3s;
 }
