@@ -10,7 +10,7 @@ export default function Hero(): JSX.Element {
       </div>
       <div className={styles.englishName}>YUMI NARITA</div>
       <div className={styles.japaneseSubtitle}>
-        植物画家・サックス演奏家・講師
+        植物画家・サックス奏者・講師
       </div>
       <HeroButton />
     </div>
