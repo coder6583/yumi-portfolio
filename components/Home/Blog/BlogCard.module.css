@@ -33,6 +33,10 @@
   font-weight: 400;
 }
 
+.date {
+  font-weight: 400;
+}
+
 .description {
   font-size: 14px;
   flex: 1;

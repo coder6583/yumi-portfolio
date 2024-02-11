@@ -1,6 +1,7 @@
 import { Divider, Image } from "@chakra-ui/react";
 import styles from "./BlogCard.module.css";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { Moment } from "moment";
 
 export default function BlogCard({
   title,
@@ -11,11 +12,10 @@ export default function BlogCard({
 }: {
   title: string;
   description: string;
-  date: number;
+  date: Moment;
   link: string;
   thumbnail: string;
 }): JSX.Element {
-  const blogDate = new Date(date);
   const displayedDescription = description.substring(0, 80);
   return (
     <div className={styles.parent}>
@@ -23,10 +23,7 @@ export default function BlogCard({
         <div className={styles.thumbnail}>
           <Image alt={thumbnail} src={thumbnail} borderRadius={"4px"} />
         </div>
-        <div className={styles.date}>
-          {blogDate.getMonth() + 1}/{blogDate.getDate() + 1}/
-          {blogDate.getFullYear()}
-        </div>
+        <div className={styles.date}>{date.format("YYYY.MM.DD")}</div>
       </div>
       <div className={styles.blogInfo}>
         <div className={styles.title}>{title}</div>
