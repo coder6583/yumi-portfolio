@@ -1,0 +1,30 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.photo {
+  width: 200px;
+  margin-bottom: 24px;
+}
+
+.name {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.description {
+  width: 90%;
+  margin-bottom: 16px;
+}
+
+.words {
+  font-weight: 400;
+}
+
+.instagram {
+  display: flex;
+  height: 30px;
+}
