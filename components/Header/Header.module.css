@@ -4,6 +4,7 @@
   width: 100%;
   height: 50px;
   box-shadow: 0px 0px 4px 1px #ddd;
+  white-space: nowrap;
 }
 
 .icon {
@@ -24,6 +25,17 @@
   flex: 1;
 }
 
+.subLogo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 40px;
+  font-size: 12px;
+  margin: 5px;
+  padding-left: 5px;
+  flex: 1;
+}
+
 .menuButton {
   width: 40px;
   height: 40px;
@@ -38,6 +50,16 @@
   width: 100%;
   height: 10px;
   margin-bottom: -10px;
-  padding-right: 10px;
   color: #0008;
+}
+
+.extraContent {
+  display: flex;
+  justify-content: right;
+  width: 70px;
+  height: 24px;
+  border-bottom-left-radius: 30px;
+  padding-right: 8px;
+  font-size: 14px;
+  background-color: var(--transparent-theme-color);
 }

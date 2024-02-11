@@ -1,4 +1,3 @@
-import { Avatar } from "@chakra-ui/avatar";
 import styles from "./Header.module.css";
 import { IconButton } from "@chakra-ui/button";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -13,6 +12,7 @@ export default function Header(): JSX.Element {
     <>
       <div className={styles.parent}>
         <div className={styles.logo}>Yumi Narita</div>
+        <div className={styles.subLogo}>ART・SAX・TEACHER</div>
         <div className={styles.menuButton}>
           <IconButton
             aria-label="Drop down menu"
@@ -31,7 +31,9 @@ export default function Header(): JSX.Element {
         </div>
         <HeaderMenu isOpen={isOpen} onClose={onClose} />
       </div>
-      <div className={styles.extraHeader}>{getPageName(pageId)}</div>
+      <div className={styles.extraHeader}>
+        <div className={styles.extraContent}>{getPageName(pageId)}</div>
+      </div>
     </>
   );
 }

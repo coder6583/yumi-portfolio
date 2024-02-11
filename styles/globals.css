@@ -40,6 +40,7 @@
   --card-border-rgb: 131, 134, 135;
 
   --theme-color: #81d6cf;
+  --transparent-theme-color: #81d6cf88;
 }
 
 @media (prefers-color-scheme: dark) {
