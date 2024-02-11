@@ -1,0 +1,25 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.link {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 90%;
+  margin-top: 8px;
+}
+
+.words {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link:active {
+  color: var(--theme-color);
+  font-weight: 400;
+  text-decoration: underline;
+}

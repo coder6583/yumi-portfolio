@@ -1,0 +1,49 @@
+.parent {
+  width: 90%;
+  border-bottom: 1px solid #ccc8;
+}
+
+.header {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.date {
+  width: 80px;
+  font-weight: 400;
+}
+
+.genre {
+  display: flex;
+  justify-content: right;
+  width: 80px;
+  font-weight: 400;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: right;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: var(--theme-color);
+  text-decoration: underline;
+  background-color: var(--white);
+  margin-bottom: 8px;
+}
+
+.words {
+  font-weight: 400;
+}
+
+.link:hover {
+  background-color: var(--transparent-theme-color);
+  border-radius: 4px;
+}
