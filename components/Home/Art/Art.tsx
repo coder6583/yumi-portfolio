@@ -1,5 +1,5 @@
 import { Image } from "@chakra-ui/react";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 import styles from "./Art.module.css";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import Link from "next/link";

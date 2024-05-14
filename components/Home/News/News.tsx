@@ -1,5 +1,5 @@
 import moment from "moment";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 import styles from "./News.module.css";
 import NewsCard from "./NewsCard";
 import Link from "next/link";

@@ -1,5 +1,5 @@
 import { Icon, Image } from "@chakra-ui/react";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 import styles from "./About.module.css";
 import Link from "next/link";
 

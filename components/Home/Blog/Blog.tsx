@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 import styles from "./Blog.module.css";
 import BlogCard from "./BlogCard";
 import { ChevronRightIcon } from "@chakra-ui/icons";
