@@ -6,7 +6,8 @@ export default function ArtRequestForm(): JSX.Element {
   return (
     <div className={styles.parent}>
       <InputRow
-        label="要望（紙のサイズ、花の種類など）"
+        label="要望（サイズ、花の種類など）"
+        required
         setData={() => {}}
         customInput={<Textarea rows={4} />}
       />

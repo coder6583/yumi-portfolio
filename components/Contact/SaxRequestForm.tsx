@@ -7,6 +7,7 @@ export default function SaxRequestForm(): JSX.Element {
     <div className={styles.parent}>
       <InputRow
         label="要望"
+        required
         setData={() => {}}
         customInput={<Textarea rows={4} />}
       />

@@ -7,6 +7,7 @@ export default function ChooseHelpForm(): JSX.Element {
     <div className={styles.parent}>
       <InputRow
         label="楽器の種類"
+        required
         setData={() => {}}
         customInput={
           <Select>
@@ -19,6 +20,7 @@ export default function ChooseHelpForm(): JSX.Element {
       />
       <InputRow
         label="予算"
+        required
         setData={() => {}}
         customInput={
           <div className={styles.money}>
