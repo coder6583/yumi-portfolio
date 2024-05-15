@@ -1,0 +1,18 @@
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 32px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 24px;
+  margin-bottom: 120px;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--theme-color);
+  border-radius: 6px;
+  box-shadow: 1px 1px 8px 1px var(--theme-color);
+}

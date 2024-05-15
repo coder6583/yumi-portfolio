@@ -43,6 +43,7 @@
   --darker-theme-color: #51a69f;
   --transparent-theme-color: #81d6cf88;
   --white: #fff;
+  --form-label: #333;
 }
 
 @media (prefers-color-scheme: dark) {
