@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import About from "./About/About";
 import Art from "./Art/Art";
 import Blog from "./Blog/Blog";
@@ -9,14 +10,16 @@ import Sax from "./Sax/Sax";
 
 export default function HomePage(): JSX.Element {
   return (
-    <div className={styles.parent}>
-      <Hero />
-      <Art />
-      <Sax />
-      <Course />
-      <Blog />
-      <News />
-      <About />
-    </div>
+    <ChakraProvider>
+      <div className={styles.parent}>
+        <Hero />
+        <Art />
+        <Sax />
+        <Course />
+        <Blog />
+        <News />
+        <About />
+      </div>
+    </ChakraProvider>
   );
 }

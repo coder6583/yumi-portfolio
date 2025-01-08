@@ -4,22 +4,26 @@ import InputField from "./InputField";
 
 export default function InputRow({
   label,
+  htmlFor,
   required,
-  setData,
   customInput,
 }: {
   label: string;
+  htmlFor: string;
   required?: boolean;
-  setData: Dispatch<SetStateAction<string>>;
   customInput?: JSX.Element;
 }): JSX.Element {
   return (
     <div className={styles.parent}>
       <div className={styles.label}>
-        <div className={styles.labelString}>{label}</div>
+        <label className={styles.labelString} htmlFor={htmlFor}>
+          {label}
+        </label>
         {required && <div className={styles.requiredTag}>必須</div>}
       </div>
-      <div className={styles.input}>{customInput || <InputField />}</div>
+      <div className={styles.input}>
+        {customInput || <InputField id={htmlFor} />}
+      </div>
     </div>
   );
 }

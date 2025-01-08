@@ -1,15 +1,26 @@
 import { Select, Textarea } from "@chakra-ui/react";
 import styles from "./ArtRequestForm.module.css";
 import InputRow from "./InputRow";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
-export default function ArtRequestForm(): JSX.Element {
+export default function ArtRequestForm({
+  register,
+}: {
+  register: UseFormRegister<FieldValues>;
+}): JSX.Element {
   return (
     <div className={styles.parent}>
       <InputRow
+        htmlFor="comments"
         label="要望（サイズ、花の種類など）"
         required
-        setData={() => {}}
-        customInput={<Textarea rows={4} />}
+        customInput={
+          <Textarea
+            id="comments"
+            rows={4}
+            {...register("comments", { required: true })}
+          />
+        }
       />
     </div>
   );
