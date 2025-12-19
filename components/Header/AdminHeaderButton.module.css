@@ -1,0 +1,21 @@
+.headerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.headerButton:hover {
+  cursor: pointer;
+  color: var(--theme-color);
+  text-decoration: underline;
+}
+
+.selectedButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  color: var(--theme-color);
+  font-weight: bolder;
+}

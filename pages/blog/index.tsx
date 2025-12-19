@@ -1,13 +1,20 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
-import HomePage from "@/components/Home/Home";
 import Footer from "@/components/Footer/Footer";
-import AdminHeader from "@/components/Header/AdminHeader";
+import BlogIndexPage from "@/components/Blog/BlogIndexPage";
+import { useEffect } from "react";
+import { usePageContext } from "../_app";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Admin() {
+export default function Blog() {
+  const { pageId, setPageId } = usePageContext();
+
+  useEffect(() => {
+    setPageId("blog");
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,9 +24,11 @@ export default function Admin() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <AdminHeader selectedMenu="login" />
+        <Header />
       </header>
-      <main className={`${inter.className}`}></main>
+      <main className={`${inter.className}`}>
+        <BlogIndexPage />
+      </main>
       <footer>
         <Footer />
       </footer>

@@ -1,8 +1,8 @@
-import { Image } from "@chakra-ui/react";
 import SectionHeader from "../../Common/SectionHeader";
 import styles from "./Art.module.css";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import Link from "next/link";
+import GalleryPhoto from "@/components/Gallery/GalleryPhoto";
 
 export default function Art(): JSX.Element {
   return (
@@ -10,20 +10,12 @@ export default function Art(): JSX.Element {
       <SectionHeader header="BOTANICAL ART" subheader="植物画" />
       <div className={styles.gallery}>
         <div className={styles.column}>
-          <div className={styles.image}>
-            <Image src="/images/clematie.jpg" alt="clematie" />
-          </div>
-          <div className={styles.image}>
-            <Image src="/images/plum.jpg" alt="plum" />
-          </div>
+          <GalleryPhoto alt="clematie" url="/images/clematie.jpg" />
+          <GalleryPhoto alt="plum" url="/images/plum.jpg" />
         </div>
         <div className={styles.column}>
-          <div className={styles.image}>
-            <Image src="/images/squash.jpg" alt="squash" />
-          </div>
-          <div className={styles.image}>
-            <Image src="/images/tomato.jpg" alt="tomato" />
-          </div>
+          <GalleryPhoto alt="squash" url="/images/squash.jpg" />
+          <GalleryPhoto alt="tomato" url="/images/tomato.jpg" />
         </div>
       </div>
       <Link href="/gallery" className={styles.link}>

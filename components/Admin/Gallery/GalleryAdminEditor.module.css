@@ -1,0 +1,17 @@
+.parent {
+  display: flex;
+  max-width: 60vw;
+  margin: auto;
+  margin-top: 80px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .parent {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
