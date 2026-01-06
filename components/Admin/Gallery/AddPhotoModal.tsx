@@ -3,6 +3,7 @@ import { uploadGalleryPhoto } from "@/functions/firestore/uploadGalleryPhoto";
 import { Photo } from "@/types/types";
 import {
   Button,
+  Checkbox,
   FormControl,
   FormLabel,
   Image,
@@ -32,6 +33,7 @@ export default function AddPhotoModal({
   const [photoName, setPhotoName] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isThumbnail, setIsThumbnail] = useState<boolean>(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,10 +65,18 @@ export default function AddPhotoModal({
       const { url } = await res.json();
 
       console.log("Uploaded image url: ", url);
-      await uploadGalleryPhoto({ id: photoId, url: url });
+      await uploadGalleryPhoto({
+        id: photoId,
+        title: photoName,
+        url: url,
+        thumbnail: isThumbnail,
+      });
 
       const photos = await getGallery();
       setPhotos(photos);
+      setPhotoId("");
+      setPhotoName("");
+      setIsThumbnail(false);
 
       setFile(null);
       onClose();
@@ -78,6 +88,9 @@ export default function AddPhotoModal({
   };
 
   const onCancel = () => {
+    setPhotoId("");
+    setPhotoName("");
+    setIsThumbnail(false);
     setFile(null);
     onClose();
   };
@@ -109,10 +122,14 @@ export default function AddPhotoModal({
               />
             </FormControl>
 
-            <Button
-              onClick={() => inputRef.current?.click()}
-              isLoading={isLoading}
+            <Checkbox
+              isChecked={isThumbnail}
+              onChange={(e) => setIsThumbnail(e.target.checked)}
             >
+              ホームに表示する
+            </Checkbox>
+
+            <Button onClick={() => inputRef.current?.click()}>
               画像を選択
             </Button>
             <Input
@@ -139,7 +156,11 @@ export default function AddPhotoModal({
           <Button mr={3} onClick={onCancel}>
             キャンセル
           </Button>
-          <Button colorScheme="blue" onClick={handleUpload}>
+          <Button
+            colorScheme="blue"
+            onClick={handleUpload}
+            isLoading={isLoading}
+          >
             アップロード
           </Button>
         </ModalFooter>

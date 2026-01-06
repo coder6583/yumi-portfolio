@@ -17,6 +17,7 @@ export default function BlogIndexPage(): JSX.Element {
     <div className={styles.parent}>
       {(blogs ?? []).map((blog) => (
         <BlogCard
+          key={blog.id}
           title={blog.title}
           date={moment(blog.date)}
           description={blog.content}

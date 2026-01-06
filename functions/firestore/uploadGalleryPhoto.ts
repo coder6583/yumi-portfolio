@@ -1,10 +1,12 @@
-import { addDoc, collection } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { db } from "./firestore";
 import { Photo } from "@/types/types";
 
 export async function uploadGalleryPhoto(photo: Photo) {
-  await addDoc(collection(db, "gallery", "photos", "photos"), {
+  await setDoc(doc(db, "gallery", "photos", "photos", photo.id), {
     id: photo.id,
+    title: photo.title,
     url: photo.url,
+    thumbnail: photo.thumbnail,
   });
 }

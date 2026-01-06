@@ -1,4 +1,6 @@
 export interface Photo {
   id: string;
+  title: string;
   url: string;
+  thumbnail: boolean;
 }

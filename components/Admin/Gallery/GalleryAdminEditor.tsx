@@ -9,7 +9,8 @@ import { Photo } from "@/types/types";
 import { AddIcon } from "@chakra-ui/icons";
 import AddPhotoModal from "./AddPhotoModal";
 import styles from "./GalleryAdminEditor.module.css";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import EditPhotoModal from "./EditPhotoModal";
 
 export default function GalleryAdminEditor({
   photos,
@@ -18,7 +19,14 @@ export default function GalleryAdminEditor({
   photos: Photo[];
   setPhotos: Dispatch<SetStateAction<Photo[] | undefined>>;
 }) {
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isEditOpen,
+    onOpen: onEditOpen,
+    onClose: onEditClose,
+  } = useDisclosure();
 
   return (
     <div className={styles.parent}>
@@ -30,6 +38,12 @@ export default function GalleryAdminEditor({
             overflow="hidden"
             borderRadius="md"
             bg="gray.100"
+            onClick={() => {
+              setSelectedPhoto(photo);
+              console.log(photo);
+              onEditOpen();
+            }}
+            _hover={{ border: "4px solid gray", cursor: "pointer" }}
           >
             <Image src={photo.url} alt="" objectFit="cover" w="100%" h="100%" />
           </Box>
@@ -52,6 +66,12 @@ export default function GalleryAdminEditor({
       </SimpleGrid>
 
       <AddPhotoModal isOpen={isOpen} onClose={onClose} setPhotos={setPhotos} />
+      <EditPhotoModal
+        isOpen={isEditOpen}
+        onClose={onEditClose}
+        photo={selectedPhoto ?? ({ id: "??", url: "??", title: "??" } as Photo)}
+        setPhotos={setPhotos}
+      />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./AdminHeaderButton.module.css";
 
 export default function AdminHeaderButton({
@@ -11,7 +12,7 @@ export default function AdminHeaderButton({
 }) {
   return id != selectedMenu ? (
     <div className={styles.headerButton}>
-      <a href="/admin/gallery">{name}</a>
+      <Link href="/admin/gallery">{name}</Link>
     </div>
   ) : (
     <div className={styles.selectedButton}>{name}</div>
