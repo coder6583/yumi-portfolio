@@ -10,7 +10,7 @@ export default function GalleryPhoto({
 }) {
   return (
     <div className={styles.image}>
-      <Image src={url} alt={alt} />
+      <Image src={url} alt={alt} width="100%" height="100%" objectFit="contain" />
     </div>
   );
 }
